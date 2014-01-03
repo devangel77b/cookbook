@@ -1,0 +1,109 @@
+\documentclass{tufte-book}
+
+% Use some useful packages
+\usepackage[pdftex]{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+%\usepackage[usenames,dvipsnames]{color}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{makeidx}
+\makeindex
+
+% PDF metadata
+\usepackage{hyperref}
+\hypersetup{pdftitle={Cookbook}}
+\hypersetup{pdfauthor={D Evangelista and family}}
+\hypersetup{pdfsubject={cooking}}
+\hypersetup{pdfkeywords={cooking}}
+%\hypersetup{colorlinks=true,citecolor=Violet,linkcolor=Blue,urlcolor=Red}
+\hypersetup{colorlinks}
+
+% References in Tufte inline style
+% use \cite commands
+% also appear collected at the end of the book
+%%\usepackage{doi}
+%\renewcommand*{\doi}[1]{\href{http://dx.doi.org/\detokenize{#1}}{doi:\detokenize{#1}}}
+
+% Get chapter numbers
+\setcounter{secnumdepth}{1}
+
+% For nicely typeset tabular material
+\usepackage{booktabs}
+
+% Prints the month name (e.g., January) and the year (e.g., 2008)
+\newcommand{\monthyear}{%
+  \ifcase\month\or January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or
+  December\fi\space\number\year
+}
+
+% Use AMS math
+%\usepackage{amsmath}
+%\usepackage{amsthm} % Use AMS theorem environments
+%\theoremstyle{plain}
+%\newtheorem{thm}{Theorem}[chapter]
+%\newtheorem{lem}[thm]{Lemma}
+%\newtheorem{prop}[thm]{Proposition}
+%\newtheorem*{cor}{Corollary}
+%\theoremstyle{defninition}
+%\newtheorem{defn}{Definition}[chapter]
+%\newtheorem{conj}{Conjecture}[chapter]
+%\newtheorem{example}{Example}[chapter] % DE added
+%\newtheorem{exercise}{Exercise}[chapter] % DE added
+%\newtheorem{demo}{Demonstration}[chapter] % DE added
+%\theoremstyle{remark}
+%\newtheorem*{rem}{Remark}
+%\newtheorem*{note}{Note}
+%\newtheorem{case}{Case}
+
+% eqExam for problems (compatible with making exams)
+%\usepackage[fortextbook,ftbsolns,forcolorpaper,noseparationrule,useexkv]{eqexam}
+% not part of my tex distribution!?
+
+% Commands for Genus species names
+%\newcommand{\species}[1]{\emph{#1}}
+
+% Formatting wish list:
+% Cute quotations and pictures for each chapter?  - use Tufte-latex defaults
+% Problems/exercises - would prefer to have something able to be made into exams? 
+
+
+% Recipes using cuisine package
+\usepackage[nonumber]{cuisine}
+
+% Book metadata
+\title{Cookbook}
+\author{Dennis Evangelista}
+\publisher{Ender \& Cat, Chapel Hill, NC}
+
+\begin{document}
+
+\frontmatter
+\maketitle
+\include{titlepage}
+\include{dedication}
+\include{preface}
+\include{acknowledgements}
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+
+
+
+
+\mainmatter
+\include{ch-test}
+
+%\appendix
+%\include{app-test}
+
+\setcounter{secnumdepth}{-1} % Don't number bibliography and index
+%\bibliographystyle{jeb}
+\bibliographystyle{abbrvnat}
+\nobibliography{cookbook}
+
+\pagestyle{plain}
+%\addcontentsline{toc}{chapter}{Index}
+\printindex
+\end{document}
